@@ -1,0 +1,218 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+.instagram {
+    display: grid;
+    grid-template-columns: 18% 55% 27%;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+/* ---------- LEFT SIDEBAR ---------- */
+.left_bar {
+    border-right: 1px solid #dbdbdb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left_bar .items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.left_bar .items:hover {
+    background-color: #f2f2f2;
+}
+
+#logo {
+    font-family: 'Lobster', cursive;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* ---------- POST SECTION ---------- */
+.post {
+    border-right: 1px solid #dbdbdb;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Stories */
+.story {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #dbdbdb;
+    overflow-x: auto;
+}
+
+.story::-webkit-scrollbar {
+    display: none;
+}
+
+.story .profile {
+    text-align: center;
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.story .profile .img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff004f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.story .profile p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Post Card */
+.post_card {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.post_header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.post_header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post_image {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post_actions {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.post_likes,
+.post_caption,
+.post_time {
+    padding: 0 10px 5px 10px;
+    font-size: 14px;
+}
+
+.post_time {
+    color: gray;
+    font-size: 12px;
+}
+
+/* ---------- SUGGESTION SECTION ---------- */
+.suggestion_section {
+    padding: 20px;
+}
+
+.suggestion_section h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.suggestion img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.suggestion div {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.suggestion button {
+    background-color: transparent;
+    border: none;
+    color: #0095f6;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+    .instagram {
+        grid-template-columns: 20% 80%;
+    }
+
+    .suggestion_section {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .instagram {
+        grid-template-columns: 1fr;
+    }
+
+    .left_bar {
+        flex-direction: row;
+        justify-content: space-around;
+        border-right: none;
+        border-top: 1px solid #dbdbdb;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: white;
+    }
+}
